@@ -1,0 +1,47 @@
+name: Search Streaming Devices
+
+on:
+  workflow_dispatch:
+    inputs:
+      search_terms:
+        description: 'Search terms (e.g. streaming device OR chromecast OR roku OR fire tv)'
+        required: true
+        default: 'streaming device near Oakville'
+      radius_km:
+        description: 'Search radius in km'
+        required: true
+        default: '50'
+      max_price:
+        description: 'Maximum price in CAD'
+        required: true
+        default: '200'
+      site:
+        description: 'Specific site to search (kijiji, craigslist, facebook, all)'
+        required: true
+        default: 'all'
+
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
+
+      - name: Run search agent
+        env:
+          SEARCH_TERMS: ${{ github.event.inputs.search_terms }}
+          RADIUS: ${{ github.event.inputs.radius_km }}
+          MAX_PRICE: ${{ github.event.inputs.max_price }}
+          SITE: ${{ github.event.inputs.site }}
+        run: |
+          python search.py --terms "$SEARCH_TERMS" --radius "$RADIUS" --max_price "$MAX_PRICE" --site "$SITE"
