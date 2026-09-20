@@ -11,8 +11,8 @@ import subprocess
 from datetime import datetime
 from pathlib import Path
 
-import playwright
 from playwright.sync_api import sync_playwright
+import math
 
 OAKVILLE_LAT = 43.453
 OAKVILLE_LON = -79.500
@@ -43,8 +43,8 @@ class StreamingDeviceSearcher:
         lat1, lon1 = OAKVILLE_LAT, OAKVILLE_LON
         dlat = (lat2 - lat1) * (3.14159 / 180)
         dlon = (lon2 - lon1) * (3.14159 / 180)
-        a = (np.sin(dlat/2)**2 + np.cos(lat1) * np.cos(lat2) * np.sin(dlon/2)**2)
-        c = 2 * np.arctan2(np.sqrt(a), np.sqrt(1-a))
+        a = (math.sin(dlat/2)**2 + math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * math.sin(dlon/2)**2)
+        c = 2 * math.atan2(math.sqrt(a), math.sqrt(1-a))
         return R * c
 
     def extract_device_model(self, title, description):
@@ -71,7 +71,7 @@ class StreamingDeviceSearcher:
         """Reject old/irrelevant models"""
         if not model:
             return False
-        old_models = ['chromecast', 'roku']  # Keep newer ones
+        old_models = ['chromecast 1st gen', 'chromecast 2nd gen', 'old tv', 'dumb tv', 'broken']
         return any(m in model for m in old_models)
 
     def scrape_kijiji(self):
