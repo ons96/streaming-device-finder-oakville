@@ -1,0 +1,77 @@
+{
+  "source": "sample",
+  "listings": [
+    {
+      "site": "kijiji",
+      "title": "Google Chromecast 4K - brand new, still boxed",
+      "description": "Selling my Google Chromecast 4K with remote. Bought two months ago.",
+      "price": "$55",
+      "location": "Oakville / Peel Region",
+      "link": "https://www.kijiji.ca/v-chromecast-4k-oakville/1234567890"
+    },
+    {
+      "site": "kijiji",
+      "title": "Roku Ultra 4K streaming player",
+      "description": "Works great, comes with the voice remote and HDMI cable.",
+      "price": "$90",
+      "location": "Mississauga",
+      "link": "https://www.kijiji.ca/v-roku-ultra/1234567891"
+    },
+    {
+      "site": "craigslist",
+      "title": "Amazon Fire TV Stick 4K",
+      "description": "Used for a month, no issues. Pickup in Oakville.",
+      "price": "$35",
+      "location": "oakville",
+      "link": "https://toronto.craigslist.org/cto/electronics/fire-tv-stick/1234567892"
+    },
+    {
+      "site": "craigslist",
+      "title": "Nvidia Shield TV 4K streaming box",
+      "description": "Shield TV with 8GB storage. Includes remote control.",
+      "price": "$120",
+      "location": "Toronto - Downtown",
+      "link": "https://toronto.craigslist.org/cto/electronics/nvidia-shield/1234567893"
+    },
+    {
+      "site": "kijiji",
+      "title": "Broken old TV for parts",
+      "description": "Old CRT TV, cracked screen, free if you haul it away.",
+      "price": "Free",
+      "location": "Hamilton",
+      "link": "https://www.kijiji.ca/v-old-tv/1234567894"
+    },
+    {
+      "site": "kijiji",
+      "title": "Apple TV 4K 32GB",
+      "description": "Apple TV with Siri remote. Box only.",
+      "price": "$180",
+      "location": "Brampton",
+      "link": "https://www.kijiji.ca/v-apple-tv/1234567895"
+    },
+    {
+      "site": "kijiji",
+      "title": "Chromecast Ultra with Google Home Mini",
+      "description": "Bundle of both, only used a few times.",
+      "price": "$85",
+      "location": "Burlington",
+      "link": "https://www.kijiji.ca/v-chromecast-ultra/1234567896"
+    },
+    {
+      "site": "kijiji",
+      "title": "Roku Streaming Stick 4K (new in box)",
+      "description": "Bought two of these by mistake, selling one unopened.",
+      "price": "$320",
+      "location": "Oakville",
+      "link": "https://www.kijiji.ca/v-roku-stick-new/1234567898"
+    },
+    {
+      "site": "craigslist",
+      "title": "Webcam and monitor for streaming",
+      "description": "Logitech webcam and a 24 inch monitor, no streaming device included.",
+      "price": "$75",
+      "location": "Scarborough",
+      "link": "https://toronto.craigslist.org/cto/computer/webcam-monitor/1234567897"
+    }
+  ]
+}

@@ -6,4 +6,5 @@ venv/
 .env
 results/
 search-results/
+reports/
 *.log

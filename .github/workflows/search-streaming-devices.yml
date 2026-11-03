@@ -16,7 +16,7 @@ on:
         required: true
         default: '200'
       site:
-        description: 'Specific site to search (kijiji, craigslist, facebook, all)'
+        description: 'Specific site to search (kijiji, craigslist, facebook, all, samples)'
         required: true
         default: 'all'
 
@@ -34,8 +34,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install playwright
+          pip install -r requirements.txt
           playwright install --with-deps chromium
+
+      - name: Run tests
+        run: python -m pytest -q
 
       - name: Run search agent
         env:
@@ -44,4 +47,10 @@ jobs:
           MAX_PRICE: ${{ github.event.inputs.max_price }}
           SITE: ${{ github.event.inputs.site }}
         run: |
-          python search.py --terms "$SEARCH_TERMS" --radius "$RADIUS" --max_price "$MAX_PRICE" --site "$SITE"
+          python search.py --terms "$SEARCH_TERMS" --radius "$RADIUS" --max_price "$MAX_PRICE" --site "$SITE" --output-dir artifacts
+
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: streaming-device-report
+          path: artifacts/
